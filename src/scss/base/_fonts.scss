@@ -1,0 +1,53 @@
+/**
+
+Description:    Walfmart-specific fonts are included here
+
+        ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Myriad Font
+
+*/
+
+$myriad: "/fonts/myriad";
+
+/* ---------------------------------------
+  1. Myriad
+---------------------------------------- */
+
+@font-face {
+  font-family: 'myriad';
+  src:
+    url('#{$myriad}/myriad-regular.woff2') format('woff2'),
+    url('#{$myriad}/myriad-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'myriad';
+  src:
+    url('#{$myriad}/myriad-light.woff2') format('woff2'),
+    url('#{$myriad}/myriad-light.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'myriad';
+  src:
+    url('#{$myriad}/myriad-lightitalic.woff2') format('woff2'),
+    url('#{$myriad}/myriad-lightitalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'myriad';
+  src:
+    url('#{$myriad}/myriad-semibold.woff2') format('woff2'),
+    url('#{$myriad}/myriad-semibold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

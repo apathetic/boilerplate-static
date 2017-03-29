@@ -1,0 +1,44 @@
+/**
+
+File:         button.scss
+Description:  Site buttons styles.
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Button
+
+*/
+
+.button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-myriad;
+  font-size: 1rem;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px button-colors('highlight');
+  }
+
+  &--primart {
+    background-color: colors('blue');
+    border: 2px solid colors('blue');
+    border-radius: 2em;
+    color: colors('white');
+    font-weight: 600;
+    text-align: center;
+
+    &:hover {
+      background-color: button-colors('highlight');
+      border: 2px solid button-colors('highlight');
+    }
+  }
+}

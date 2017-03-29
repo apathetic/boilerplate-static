@@ -1,0 +1,67 @@
+/**
+
+Description:  Contains site-wide SASS functions
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Colors
+    2. Z-Index
+    3. Font helpers
+
+*/
+
+/* ---------------------------------------
+  1.  Colors
+---------------------------------------- */
+
+@function colors($color) {
+  @if not map-has-key($colors, $color) {
+    @warn 'No color found for `#{$color}`.';
+  }
+
+  @return map-get($colors, $color);
+}
+
+@function button-colors($color) {
+  @if not map-has-key($button-colors, $color) {
+    @warn 'No button color found for `#{$color}`.';
+  }
+
+  @return map-get($button-colors, $color);
+}
+
+@function font-colors($color) {
+  @if not map-has-key($font-colors, $color) {
+    @warn 'No font color found for `#{$color}`.';
+  }
+
+  @return map-get($font-colors, $color);
+}
+
+
+/* ---------------------------------------
+  2.  Z-Index
+---------------------------------------- */
+
+@function zindex($layer) {
+  @if not map-has-key($zindex, $layer) {
+    @warn 'No z-index found for `#{$layer}`.';
+  }
+
+  @return map-get($zindex, $layer);
+}
+
+
+/* ---------------------------------------
+  3.  Font helpers
+---------------------------------------- */
+
+@function em($size, $base:$font-size-base) {
+  @return #{$size / $base}em;
+}
+
+@function rem($size) {
+  @return #{$size / $font-size-base}rem;
+}

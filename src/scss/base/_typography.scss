@@ -1,0 +1,112 @@
+/**
+
+Description:  All fonts and typographic styles
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Headings
+    2. Text style
+    3. Paragraphs
+    4. Links
+
+*/
+
+/* stylelint-disable selector-list-comma-newline-after */
+
+/* ---------------------------------------
+  1.  Headings
+---------------------------------------- */
+
+// * "em" if the property scales according to its font-size
+// * everything else in "rem"
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+  font-family: $font-myriad;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 1.2;
+  margin-bottom: .5em;
+}
+
+h1,
+.heading-1 {
+  font-size: rem(54px);
+  line-height: 1.1;
+}
+
+h2,
+.heading-2 {
+  font-size: rem(36px);
+  line-height: 1.2;
+}
+
+h3,
+.heading-3 {
+  font-size: rem(30px);
+  line-height: 1.3;
+}
+
+
+@include from-breakpoint('medium') {
+  h1, .heading-1 { font-size: rem(60px); }
+  h2, .heading-2 { font-size: rem(40px); }
+  h3, .heading-3 { font-size: rem(30px); }
+}
+
+@include from-breakpoint('large') {
+  h1, .heading-1 { font-size: rem(64px); }
+  h2, .heading-2 { font-size: rem(48px); }
+  h3, .heading-3 { font-size: rem(32px); }
+}
+
+
+/* ---------------------------------------
+  2.  Text Style
+---------------------------------------- */
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+/* ---------------------------------------
+  3.  Paragraphs
+---------------------------------------- */
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------------------------------
+  4.  Links
+---------------------------------------- */
+
+a {
+  color: colors('blue');
+
+  &:not([class]):hover {            // NOTE: this prevents multiple hover states on a link (ie. underline _and_ scale, which we do not want)
+    text-decoration: underline;
+  }
+
+  &:not([class]):visited {          // this upsets the specificity graph, but seems the least problematic
+    color: font-colors('visited');
+  }
+}

@@ -1,0 +1,105 @@
+/**
+
+File:         forms.scss
+Description:  Form styles.
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Input
+
+*/
+
+
+.input {
+  -webkit-appearance: none;
+  border: 1px solid colors('light-grey');
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px button-colors('highlight');
+  }
+}
+
+.form-item {
+  margin-bottom: .5em;
+
+  &__label {
+    display: block;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      border: 2px solid colors('grey');
+      border-radius: 3px;
+      display: block;
+      height: 1.3em;
+      position: absolute;
+      top: 2px;
+      width: 1.3em;
+    }
+
+    &:focus {
+      box-shadow: 0 0 2px 1px colors('blue');
+    }
+
+    &:hover {
+      color: colors('blue');
+
+      &:before {
+        border-color: colors('blue');
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 2em;
+  }
+
+  input {
+    display: none;
+
+    &:checked + label {
+      color: colors('blue');
+
+      &:before {
+        border-color: colors('blue');
+      }
+    }
+  }
+
+  &--checkbox {
+    .form-item__label {
+      &:after {
+        border-bottom: 2px solid colors('blue');
+        border-left: 2px solid colors('blue');
+        content: '';
+        display: none;
+        left: 4px;
+        top: 7px;
+        height: 8px;
+        position: absolute;
+        transform: rotate(-55deg) skewX(-20deg);
+        width: 15px;
+      }
+    }
+
+    input:checked + label:after {
+      display: block;
+    }
+  }
+
+  &--radio {
+    .form-item__label {
+      &:before {
+        border-radius: 50%;
+      }
+    }
+
+    input:checked + label:before {
+      background: colors('blue');
+    }
+  }
+}

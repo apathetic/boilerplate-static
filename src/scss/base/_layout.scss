@@ -1,0 +1,30 @@
+/**
+
+Description:    Structural / general layout stuffs live in here.
+
+        ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Container
+
+*/
+
+/* ---------------------------------------
+  1. Container
+---------------------------------------- */
+
+section {
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 0 $page-gutter;
+  width: 100%;
+
+  @include from-breakpoint($max-width) {
+    padding: 0 ($max-width * ($page-gutter / 1vw) / 100);
+  }
+}

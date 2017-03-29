@@ -1,0 +1,28 @@
+<svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="12" y="14" width="20" height="14"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="14" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <polyline id="path-3" points="15 1 15 6 10 6"></polyline>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="5" height="5" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <polyline id="path-5" points="6 4 6 9 1 9"></polyline>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="5" height="5" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Video-Controls---Full-Screen-Off-Btn">
+            <use id="Rectangle-38-Copy" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+            <rect id="Rectangle-38" fill="#FFFFFF" x="9" y="11" width="20" height="14"></rect>
+            <g id="Group" transform="translate(11.000000, 13.000000)" stroke="#333333">
+                <path d="M11.5,0.5 L15.5714286,4.57142857" id="Line" stroke-linecap="square" transform="translate(13.500000, 2.500000) scale(1, -1) translate(-13.500000, -2.500000) "></path>
+                <use id="Rectangle-44" mask="url(#mask-4)" stroke-width="2" transform="translate(12.500000, 3.500000) rotate(90.000000) translate(-12.500000, -3.500000) " xlink:href="#path-3"></use>
+                <path d="M0.5,5.5 L4.57142857,9.57142857" id="Line" stroke-linecap="square" transform="translate(2.500000, 7.500000) scale(1, -1) rotate(-180.000000) translate(-2.500000, -7.500000) "></path>
+                <use id="Rectangle-44" mask="url(#mask-6)" stroke-width="2" transform="translate(3.500000, 6.500000) rotate(270.000000) translate(-3.500000, -6.500000) " xlink:href="#path-5"></use>
+            </g>
+        </g>
+    </g>
+</svg>

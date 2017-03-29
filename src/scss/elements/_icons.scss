@@ -1,0 +1,25 @@
+/**
+
+File:         icons.scss
+Description:  SVG Icon styles.
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. General
+
+*/
+
+
+/* ---------------------------------------
+   1.  General
+---------------------------------------- */
+
+.icon {
+  fill: currentColor;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  pointer-events: none; // To prevent a bug on IE
+}

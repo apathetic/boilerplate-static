@@ -1,0 +1,54 @@
+/**
+
+Description:  Site-wide animations and transitions
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Global
+    2. JS-triggered
+
+    - nice reference: https://github.com/geoffgraham/animate.scss
+
+*/
+
+
+/* ---------------------------------------
+ 1.  Global
+---------------------------------------- */
+// Animations that do not rely on JS:
+.fx {
+  &--scale {
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+
+/* ---------------------------------------
+ 2.  JS-triggered
+---------------------------------------- */
+// NOTE: because these animations all rely on JS (ie. to toggle the
+//       class on / off), we only apply .fx if there is JS.
+.js {
+  .fx {
+    transition: all $transition-time;
+
+    &--fade-in {
+      opacity: 0;
+
+      &.animated {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Sample animation placeholder
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

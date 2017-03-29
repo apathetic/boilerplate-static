@@ -1,0 +1,112 @@
+/**
+
+Description:  Site-wide variables
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Grid
+    2. Colours
+    3. Typography
+    4. Transitions
+    5. z-index
+    6. Opacity
+    7. Components
+
+*/
+
+/* ---------------------------------------
+  1.  Grid
+---------------------------------------- */
+
+$small: 600px;      // better: use em's for this
+$medium: 1000px;
+$max-width: 1440px;
+
+$breakpoints: (
+  small: (null, $small - 1),
+  medium: ($small, $medium - 1),
+  large: ($medium, null)
+);
+
+$columns: 12;
+$gutter: 20px;
+$page-gutter: 4vw;
+
+$column: 100% / $columns;
+$padding: $gutter / 2;
+
+/* ---------------------------------------
+  2.  Colours
+---------------------------------------- */
+
+$colors: (
+  'white': #fff,
+  'black': #000,
+  //
+  'grey': #999,
+  'dark-grey': #333,
+  'light-grey': #ccc,
+  'lightest-grey': #e8e8e8,
+  //
+  'blue': #007dc6,
+  'dark-blue': #004c91,
+  //
+  'green': #76c043,
+  'yellow': #ffc220,
+  'cerise': #eb248d
+);
+
+$button-colors: (
+  'highlight': #004c91
+);
+
+$font-colors: (
+  'dark': #232323,
+  'medium': #666,
+  'light': #999,
+  'visited': #848
+);
+
+/* ---------------------------------------
+  3.  Typography
+---------------------------------------- */
+
+$font-sans: Gill Sans, Arial, sans-serif;
+$font-serif: Georgia, serif;
+$font-myriad: 'myriad-pro', $font-sans;
+$font-size-base: 18px;
+
+/* ---------------------------------------
+  4.  Transitions
+---------------------------------------- */
+
+$transition-time: .4s;      // site default
+
+/* ---------------------------------------
+  5.  Z-Index
+---------------------------------------- */
+
+$zindex: (
+  'behind': -1,
+  'mask': 0,
+  'base': 1,
+  'section': 2,
+  'highlight': 3,
+  'super': 4,
+  'flyout': 9,
+  'overlay': 10
+);
+
+/* ---------------------------------------
+  6.  Opacities
+---------------------------------------- */
+
+$opacity: .25;
+
+/* ---------------------------------------
+  7.  Components
+---------------------------------------- */
+
+// reusable module / section-specific stuffs

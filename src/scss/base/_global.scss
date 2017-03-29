@@ -1,0 +1,77 @@
+/**
+
+Description:  Site-wide global styles
+
+    ◡◠ ✥ ◠◡
+
+  Table of Contents:
+
+  1. Global
+  2. Global utility classes
+
+*/
+
+/* ---------------------------------------
+  1.  Global
+---------------------------------------- */
+
+* {
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  position: relative;
+  text-size-adjust: none; // Fix for larger font rendering on Safari
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;    // only OS X
+  -webkit-font-smoothing: antialiased;   // we put this here to overcome webkit bug when doing -webkit-transforms
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-family: $font-myriad;
+  font-kerning: normal;
+  font-size: $font-size-base;
+  line-height: 1.5;
+}
+
+body {
+  color: colors('dark-grey');
+  overflow-x: hidden; // old IE
+}
+
+main {
+  background-color: colors('white');
+  display: block;     // old IE
+  overflow: hidden;
+}
+
+
+/* ---------------------------------------
+  2.  Utility Classes
+---------------------------------------- */
+
+.clip {
+  overflow: hidden;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.hidden {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.cover {
+  @include cover();
+}
+
+.ratio-16-9 {
+  @include ratio-16-9();
+}

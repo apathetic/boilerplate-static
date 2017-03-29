@@ -1,0 +1,194 @@
+/**
+
+Description:  Helpful SASS mixins
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Breakpoints
+    2. Grid
+    3. Layout helpers
+    4. Font helpers
+    5. Miscellany
+
+*/
+
+/* ---------------------------------------
+  1.  Breakpoints
+---------------------------------------- */
+
+/**
+ * Mobile-first breakpoint mixin. This is the preferred way to use a
+ * breakpoint, with larger devices inheriting from smaller ones.
+ * @param  {mixed} $bp  You can pass in "small", "medium", or "large".
+ *                      Or, a direct pixel value works too (eg. "800px")
+ */
+@mixin from-breakpoint($bp) {
+  @if ($bp == 'small') {
+    @content;
+  } @else {
+    @if map-has-key($breakpoints, $bp) {
+      $list: map-get($breakpoints, $bp);
+      $bp: nth($list, 1);
+    }
+
+    @media screen and (min-width: #{$bp}) {
+      @content;
+    }
+  }
+}
+
+// Target a specific breakpoint
+@mixin at-breakpoint($bp) {
+  $list: map-get($breakpoints, $bp);
+  $min: nth($list, 1);
+  $max: nth($list, length($list));
+
+  @if ($min == null) {
+    @media screen and (max-width: #{$max}) {
+      @content;
+    }
+  } @else if ($max == null) {
+    @media screen and (min-width: #{$min}) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+// Upto a specific breakpoint.
+@mixin upto-breakpoint($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    $list: map-get($breakpoints, $bp);
+    $bp: nth($list, 1) - 1;
+  }
+
+  @media only screen and (max-width: $bp) {
+    @content;
+  }
+}
+
+/* ---------------------------------------
+  2.  Grid
+---------------------------------------- */
+
+@mixin columns($number, $total: $columns) {
+  $percentage: ($number / $total) * 100%;
+
+  // width: $percentage;
+
+  // VS.
+
+  // there is a bug on IE10, IE11 that will choke on this when using border-box: https://github.com/philipwalton/flexbugs#7-flex-basis-doesnt-account-for-box-sizingborder-box
+  flex: 0 0 $percentage;
+  max-width: $percentage;
+}
+
+@mixin column-offset($number, $side: 'left', $total: $columns) {
+  margin-#{$side}: ($number / $total) * 100%;
+}
+
+@mixin grid-item {
+  // background-clip: padding-box;
+  // border: $padding solid transparent;
+  // flex-basis: auto; // added for IE10, IE11 bug. See prev comment.
+
+  // VS.
+
+  flex: 1;
+  padding: 0 $padding;
+}
+
+@mixin grid--no-gutter {
+  // border: 0 !important;
+  // background-clip: border-box;
+  padding: 0;
+}
+
+@mixin grid--flush {
+  margin: 0 -#{$padding};  // flush. or not?
+}
+
+@mixin grid--bottom {
+  align-items: flex-end;
+}
+
+@mixin grid--center {
+  align-items: center;
+}
+
+@mixin grid--wrap {
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------
+  2.  Layout Helpers
+---------------------------------------- */
+
+@mixin cover($isFixed: false, $top: 0) {
+  top: $top;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @if ($isFixed == true) {
+    position: fixed;
+  } @else {
+    position: absolute;
+  }
+}
+
+@mixin center($isFixed:false) {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  @if ($isFixed == true) {
+    position: fixed;
+  } @else {
+    position: absolute;
+  }
+}
+
+@mixin clip-content {
+  overflow: hidden;
+  width: 100%;
+
+  &.is-touch {
+    position: fixed; // To prevent a bug on iOS
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+/* ---------------------------------------
+  3.  Font Helpers
+---------------------------------------- */
+
+@mixin font-size($size: $base-size) {
+  font-size: calculate-rem($size);
+}
+
+/* ---------------------------------------
+  5.  Miscellany
+---------------------------------------- */
+
+// 16:9 Ratio
+@mixin ratio-16-9 {
+  padding-top: (9 / 16) * 100%;
+}
+
+// 4:3 Ratio.
+@mixin ratio-4-3 {
+  padding-top: (4 / 3) * 100%;
+}

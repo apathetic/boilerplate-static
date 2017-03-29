@@ -1,0 +1,83 @@
+/**
+
+Description:  Contains grid system
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Grid
+    2. Responsive
+
+*/
+
+/* ---------------------------------------
+  1.  Grid
+---------------------------------------- */
+
+// demo: http://codepen.io/apatheticwes/pen/vxjwVW
+
+.grid {
+  display: flex;
+
+  &--flush {
+    @include grid--flush;
+  }
+
+  &--wrap {
+    @include grid--wrap;
+  }
+
+  &--no-gutter {
+    @include grid--no-gutter;
+  }
+
+  &--center {
+    @include grid--center;
+  }
+
+  &--bottom {
+    @include grid--bottom;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--spaced {
+    justify-content: space-between;
+  }
+
+  &--rows {
+    flex-direction: column;  // this creates "rows"
+  }
+
+  &--cols {
+    flex-direction: row;     // and this, "columns"
+  }
+}
+
+[class*="grid__item"] {
+  @include grid-item;
+}
+
+/* ---------------------------------------
+  2.  Responsive
+---------------------------------------- */
+
+@include at-breakpoint('small') {
+  // All grids (ordinarily) collapse to full-width
+  .grid:not(.grid--small) {
+    display: block;
+  }
+}
+
+@include from-breakpoint('medium') {
+  .grid__item {
+    @for $i from 1 through 12 {
+      &--#{$i} {
+        @include columns($i);
+      }
+    }
+  }
+}

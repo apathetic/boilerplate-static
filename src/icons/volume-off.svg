@@ -1,0 +1,11 @@
+<svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Video-Controls---Volume-Off-Btn">
+            <polygon id="Triangle-2-Copy" fill="#FFFFFF" transform="translate(14.000000, 20.497360) scale(-1, 1) rotate(90.000000) translate(-14.000000, -20.497360) " points="14 12.6495343 23.4394817 28.3451865 4.56051825 28.3451865"></polygon>
+            <rect id="Rectangle" fill="#FFFFFF" x="6.2" y="15.1304348" width="4.92631579" height="11.5652174"></rect>
+            <path d="M28.4285714,17.4285714 L33.5714286,22.5714286" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M28.4285714,17.4285714 L33.5714286,22.5714286" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" transform="translate(31.000000, 20.000000) scale(1, -1) translate(-31.000000, -20.000000) "></path>
+        </g>
+    </g>
+</svg>
